@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AppShell } from "@/components/aurora/AppShell";
+import BlueCodeLanding from "./pages/bluecode/Landing";
 import Home from "./pages/aurora/Home";
 import Situacoes from "./pages/aurora/Situacoes";
 import Evolucao from "./pages/aurora/Evolucao";
@@ -21,8 +22,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<BlueCodeLanding />} />
           <Route element={<AppShell />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/app" element={<Home />} />
             <Route path="/situacoes" element={<Situacoes />} />
             <Route path="/evolucao" element={<Evolucao />} />
             <Route path="/planos" element={<Planos />} />
