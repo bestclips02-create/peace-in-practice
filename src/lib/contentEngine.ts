@@ -10,7 +10,7 @@ function dayHash() {
   return Math.abs(h);
 }
 
-function pick<T extends { cats: Category[] }>(pool: T[], wanted: Category[], recent: string[], idOf: (t: T) => string, salt = 0): T {
+function pick<T extends { cats: Category[] }>(pool: T[], wanted: Category[], recent: string[], idOf: (t: any) => string, salt = 0): T {
   // 1) preferred = matches at least one wanted category and not in recent
   const score = (item: T) => {
     const overlap = item.cats.filter(c => wanted.includes(c)).length;

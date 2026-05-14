@@ -116,5 +116,5 @@ export function levelNames() { return LEVELS.map(l => l.name); }
 // Categories favored for the user
 export function userCategories(s: UserState): Category[] {
   const fromGoal = ({ paz: ["paz","ansiedade","raiva"], clareza: ["direcao","decisoes","paz"], ansiedade: ["ansiedade","paz","confianca"], fe: ["confianca","gratidao","medo"] } as const)[s.goal ?? "paz"];
-  return fromGoal as Category[];
+  return [...fromGoal] as Category[];
 }

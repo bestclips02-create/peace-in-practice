@@ -113,3 +113,79 @@
 }
 .animate-breathe { animation: breathe 5s ease-in-out infinite; }
 .animate-fade-up { animation: fade-up 0.6s var(--ease-soft) both; }
+
+/* ============================================
+   BLUE CODE — scoped design tokens
+   Applied via wrapping <div class="bluecode">
+   ============================================ */
+.bluecode {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 40% 9%;
+  --card-foreground: 210 40% 98%;
+  --muted: 222 30% 14%;
+  --muted-foreground: 215 20% 70%;
+  --border: 222 30% 18%;
+  --input: 222 30% 18%;
+  --primary: 214 100% 60%;
+  --primary-foreground: 222 47% 6%;
+  --primary-glow: 200 100% 65%;
+  --accent: 195 90% 55%;
+  --accent-foreground: 222 47% 6%;
+  --ring: 214 100% 60%;
+  --radius: 0.875rem;
+
+  --bc-gradient-hero: radial-gradient(1200px 600px at 20% 10%, hsl(214 100% 50% / 0.25), transparent 60%),
+                      radial-gradient(900px 500px at 85% 20%, hsl(195 90% 55% / 0.18), transparent 60%),
+                      linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 4%) 100%);
+  --bc-gradient-cta: linear-gradient(135deg, hsl(214 100% 60%) 0%, hsl(195 90% 55%) 100%);
+  --bc-gradient-card: linear-gradient(180deg, hsl(222 40% 11%) 0%, hsl(222 40% 8%) 100%);
+  --bc-grid: linear-gradient(hsl(214 100% 60% / 0.06) 1px, transparent 1px),
+             linear-gradient(90deg, hsl(214 100% 60% / 0.06) 1px, transparent 1px);
+
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.bluecode h1, .bluecode h2, .bluecode h3, .bluecode .font-display {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+.bluecode .bg-bc-hero { background: var(--bc-gradient-hero); }
+.bluecode .bg-bc-cta { background: var(--bc-gradient-cta); }
+.bluecode .bg-bc-card { background: var(--bc-gradient-card); }
+.bluecode .bg-bc-grid {
+  background-image: var(--bc-grid);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+.bluecode .text-gradient {
+  background: linear-gradient(135deg, hsl(214 100% 75%), hsl(195 90% 65%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bluecode .shadow-bc-glow { box-shadow: 0 20px 80px -20px hsl(214 100% 50% / 0.45); }
+.bluecode .shadow-bc-card { box-shadow: 0 1px 0 hsl(214 100% 60% / 0.08) inset, 0 30px 60px -30px hsl(222 80% 2% / 0.8); }
+.bluecode .ring-bc { box-shadow: 0 0 0 1px hsl(214 100% 60% / 0.2); }
+
+@keyframes bc-float {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+@keyframes bc-pulse-ring {
+  0% { box-shadow: 0 0 0 0 hsl(214 100% 60% / 0.5) }
+  100% { box-shadow: 0 0 0 24px hsl(214 100% 60% / 0) }
+}
+@keyframes bc-scan {
+  0% { transform: translateX(-100%) }
+  100% { transform: translateX(100%) }
+}
+.bluecode .animate-bc-float { animation: bc-float 6s ease-in-out infinite; }
+.bluecode .animate-bc-pulse { animation: bc-pulse-ring 2.4s ease-out infinite; }
+.bluecode .animate-bc-scan::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, hsl(214 100% 70% / 0.15), transparent);
+  animation: bc-scan 2.5s linear infinite;
+}
