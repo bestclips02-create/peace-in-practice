@@ -142,7 +142,7 @@ export default function BlueCodeLanding() {
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-6 animate-fade-up">
-              Transformamos suas ideias em{" "}
+              Colocamos suas ideias em{" "}
               <span className="text-gradient">sistemas e aplicativos</span> de alto valor.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 animate-fade-up" style={{ animationDelay: "120ms" }}>
